@@ -271,6 +271,11 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 
+.doi-text {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
 .pub-press {
   display: flex;
   flex-wrap: wrap;
