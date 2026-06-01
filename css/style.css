@@ -272,7 +272,7 @@ img { max-width: 100%; display: block; }
 }
 
 .doi-text {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   color: var(--color-text-muted);
 }
 
