@@ -35,12 +35,10 @@
 %% ── Section environment: label left, content right, same row ─────────────
 \newenvironment{cvsec}[1]{%
   \par\vspace{0.9em}%
-  \noindent
-  \begin{minipage}[t]{\seclabelwd}%
-    \raggedright\small\bfseries #1%
-  \end{minipage}%
-  \rule[0.6ex]{\dimexpr\linewidth-\seclabelwd\relax}{0.4pt}%
-  \par\nobreak\vspace{3pt}%
+  \noindent{\small\bfseries #1}\par\nobreak%
+  \vspace{2pt}%
+  \noindent\rule{\linewidth}{0.4pt}\par\nobreak%
+  \vspace{3pt}%
   \begin{adjustwidth}{\seclabelwd}{}%
   \noindent%
 }{%
