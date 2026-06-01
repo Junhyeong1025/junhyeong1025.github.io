@@ -272,8 +272,9 @@ img { max-width: 100%; display: block; }
 }
 
 .doi-text {
-  font-size: 0.65rem;
-  color: #b0b7c3;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-style: normal;
 }
 
 .pub-press {
