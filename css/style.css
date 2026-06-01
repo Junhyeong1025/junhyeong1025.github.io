@@ -271,6 +271,38 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 
+.pub-press {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.press-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 2px;
+}
+
+.pub-press a {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  padding: 2px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.pub-press a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
 /* =============================================
    Projects
    ============================================= */
