@@ -1,3 +1,9 @@
+// Open pub thumbnails in new tab on click
+document.querySelectorAll('.pub-thumb img').forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => window.open(img.src, '_blank'));
+});
+
 // Highlight active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
