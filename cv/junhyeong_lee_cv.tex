@@ -4,7 +4,7 @@
 \documentclass[11pt, a4paper]{article}
 
 %% ── Packages ──────────────────────────────────────────────────────────────
-\usepackage[top=0.85in, bottom=0.85in, left=1.0in, right=1.0in]{geometry}
+\usepackage[top=0.85in, bottom=0.85in, left=0.85in, right=0.85in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -28,10 +28,19 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-%% ── Section style ─────────────────────────────────────────────────────────
-\titleformat{\section}
-  {\large\bfseries}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{1.2em}{0.5em}
+%% ── Section style (label in left margin, content inline) ─────────────────
+\newlength{\seclabelwd}
+\setlength{\seclabelwd}{1.35in}
+
+\titleformat{\section}[leftmargin]
+  {\small\bfseries\raggedright}
+  {}{0pt}{}
+\titlespacing{\section}{\seclabelwd}{1.0em}{0pt}
+
+%% Horizontal rule across full text width after section label
+\newcommand{\sectionrule}{%
+  \noindent\hspace{-\seclabelwd}\rule{\dimexpr\textwidth+\seclabelwd\relax}{0.4pt}\par\vspace{2pt}%
+}
 
 %% ── List styles ───────────────────────────────────────────────────────────
 \newlist{publist}{enumerate}{1}
@@ -66,8 +75,11 @@
 %% ── Header ────────────────────────────────────────────────────────────────
 {\huge\bfseries Junhyeong Lee}
 
-\vspace{0.5em}
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.8pt}
+\vspace{0.2em}
 
+\noindent
 Department of Mechanical Engineering,
 Korea Advanced Institute of Science and Technology (KAIST) \\
 Email: \href{mailto:jhl8831@kaist.ac.kr}{jhl8831@kaist.ac.kr} \quad
@@ -78,6 +90,7 @@ Homepage: \href{https://junhyeong1025.github.io}{junhyeong1025.github.io}
 
 %% ── Research Interests ────────────────────────────────────────────────────
 \section{Research Interests}
+\sectionrule
 
 Artificial intelligence for inverse design \quad$\cdot$\quad
 Artificial intelligence for manufacturing \quad$\cdot$\quad
@@ -86,6 +99,7 @@ Large Language Models
 
 %% ── Education ─────────────────────────────────────────────────────────────
 \section{Education \& Experience}
+\sectionrule
 
 \entry{Postdoctoral Fellow}{Feb.~2026 -- Present}{%
   PRISM-AI Center (InnoCORE) \& AiM$^4$ Lab,
@@ -114,6 +128,7 @@ Large Language Models
 
 %% ── Publications ──────────────────────────────────────────────────────────
 \section{Publications}
+\sectionrule
 
 \textit{$^+$Equal contribution \quad $^*$Corresponding author}
 
@@ -245,6 +260,7 @@ Large Language Models
 
 %% ── Patents ───────────────────────────────────────────────────────────────
 \section{Patents}
+\sectionrule
 
 \begin{publist}
 
@@ -260,6 +276,7 @@ Filed (KR 10-2023-0172701).
 
 %% ── Conferences ───────────────────────────────────────────────────────────
 \section{Conferences}
+\sectionrule
 
 \begin{publist}[start=11]
 
@@ -311,6 +328,7 @@ Filed (KR 10-2023-0172701).
 
 %% ── Honors & Awards ───────────────────────────────────────────────────────
 \section{Honors \& Awards}
+\sectionrule
 
 \entry{Student of the Year}{2025}{%
   Spring Conference of the Korean Institute of Metals and Materials (KIM)
@@ -339,6 +357,7 @@ Filed (KR 10-2023-0172701).
 
 %% ── Projects ──────────────────────────────────────────────────────────────
 \section{Projects}
+\sectionrule
 
 \entry{InnoCORE Project}{2025--Present}{%
   Ministry of Science and ICT (MSIT), Korea
@@ -359,6 +378,7 @@ Filed (KR 10-2023-0172701).
 
 %% ── Teaching ──────────────────────────────────────────────────────────────
 \section{Teaching Experience \& Leadership}
+\sectionrule
 
 \entry{AiM$^4$ Lab Student Representative, KAIST}{2024}{%
   \begin{cvbullet}
@@ -385,6 +405,7 @@ Filed (KR 10-2023-0172701).
 
 %% ── Skills ────────────────────────────────────────────────────────────────
 \section{Skills}
+\sectionrule
 
 \textbf{Simulation / Coding:}
 COMSOL Multiphysics, ABAQUS, Fe-safe, HyperMesh, ADINA, EIDORS, MATLAB, Python
@@ -402,6 +423,7 @@ Multi-agent orchestration, RAG (retrieval-augmented generation), tool-calling
 
 %% ── References ────────────────────────────────────────────────────────────
 \section{References}
+\sectionrule
 
 \textbf{Prof.\ Seunghwa Ryu} \\
 Department of Mechanical Engineering, KAIST \\
