@@ -1,26 +1,21 @@
 %% Junhyeong Lee — Curriculum Vitae
-%% Compile with: xelatex or pdflatex
+%% Compile with: pdflatex or xelatex
 
 \documentclass[11pt, a4paper]{article}
 
 %% ── Packages ──────────────────────────────────────────────────────────────
-\usepackage[top=0.75in, bottom=0.75in, left=1.0in, right=1.0in]{geometry}
+\usepackage[top=0.85in, bottom=0.85in, left=1.0in, right=1.0in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
-\usepackage{longtable}
-\usepackage{array}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
+\usepackage{titlesec}
 
 %% ── Hyperref ──────────────────────────────────────────────────────────────
-\hypersetup{
-  colorlinks = true,
-  urlcolor   = blue,
-  linkcolor  = black
-}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
 
 %% ── Page style ────────────────────────────────────────────────────────────
 \pagestyle{fancy}
@@ -33,34 +28,21 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-%% ── Column widths ─────────────────────────────────────────────────────────
-\newlength{\lblw}\setlength{\lblw}{1.4in}
-\newlength{\conw}\setlength{\conw}{\textwidth}
-\addtolength{\conw}{-\lblw}
-\addtolength{\conw}{-8pt}
+%% ── Section style ─────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{1.2em}{0.5em}
 
-\setlength{\tabcolsep}{4pt}
-\setlength{\LTpre}{0pt}
-\setlength{\LTpost}{4pt}
-
-%% ── CV table environment ──────────────────────────────────────────────────
-\newenvironment{cvtable}{%
-  \begin{longtable}{@{}>{\bfseries\raggedright\arraybackslash}p{\lblw}@{\hspace{8pt}}p{\conw}@{}}%
-}{%
-  \end{longtable}%
-}
-
-%% ── Pub list (numbered) ───────────────────────────────────────────────────
+%% ── List styles ───────────────────────────────────────────────────────────
 \newlist{publist}{enumerate}{1}
 \setlist[publist]{
-  leftmargin = 1.8em,
+  leftmargin = 2em,
   label      = \arabic*.,
-  itemsep    = 4pt,
+  itemsep    = 5pt,
   parsep     = 0pt,
-  topsep     = 2pt
+  topsep     = 4pt
 }
 
-%% ── Bullet list ───────────────────────────────────────────────────────────
 \newlist{cvbullet}{itemize}{1}
 \setlist[cvbullet]{
   leftmargin = 1.5em,
@@ -70,400 +52,376 @@
   topsep     = 2pt
 }
 
+%% ── Sub-entry helper ──────────────────────────────────────────────────────
+%% \entry{Left (bold)}{Right detail}{Below detail}
+\newcommand{\entry}[3]{%
+  \textbf{#1}\hfill #2 \\
+  \hangindent=0pt #3 \vspace{4pt}%
+}
+
 %% ══════════════════════════════════════════════════════════════════════════
 \begin{document}
 
 %% ── Header ────────────────────────────────────────────────────────────────
-{\LARGE\bfseries Junhyeong Lee}
+{\huge\bfseries Junhyeong Lee}
 
-\vspace{0.4em}\hrule height 0.8pt\vspace{0.5em}
+\vspace{0.5em}
 
-Department of Mechanical Engineering\\
-Korea Advanced Institute of Science and Technology (KAIST)\\
-Email: \href{mailto:jhl8831@kaist.ac.kr}{jhl8831@kaist.ac.kr},\quad
-Phone: +82-10-8556-3457\\
-Homepage: \href{https://junhyeong1025.github.io}{https://junhyeong1025.github.io}
+Department of Mechanical Engineering,
+Korea Advanced Institute of Science and Technology (KAIST) \\
+Email: \href{mailto:jhl8831@kaist.ac.kr}{jhl8831@kaist.ac.kr} \quad
+Phone: +82-10-8556-3457 \quad
+Homepage: \href{https://junhyeong1025.github.io}{junhyeong1025.github.io}
 
-\vspace{0.8em}
+\vspace{0.3em}
 
-%% ── Main table ────────────────────────────────────────────────────────────
-\begin{cvtable}
+%% ── Research Interests ────────────────────────────────────────────────────
+\section{Research Interests}
 
-%% ── Research Interest ─────────────────────────────────────────────────────
-Research Interest &
-Artificial intelligence for inverse design, Artificial intelligence for manufacturing,
-Data-driven optimization, Large Language Models \\[0.8em]
+Artificial intelligence for inverse design \quad$\cdot$\quad
+Artificial intelligence for manufacturing \quad$\cdot$\quad
+Data-driven optimization \quad$\cdot$\quad
+Large Language Models
 
 %% ── Education ─────────────────────────────────────────────────────────────
-Education &
-\textbf{Korea Advanced Institute of Science and Technology (KAIST)}, S.~Korea \newline
-Postdoctoral Fellow, PRISM-AI Center (InnoCORE) \& AiM$^4$ Lab,
-(Feb.~'26 -- Present) \newline
-Advisor: Prof.\ Seunghwa Ryu \\[0.4em]
+\section{Education \& Experience}
 
-& \textbf{Korea Advanced Institute of Science and Technology (KAIST)}, S.~Korea \newline
-Ph.D.\ in Mechanical Engineering, (Sep.~'22 -- Feb.~'26) \newline
-Advisor: Prof.\ Seunghwa Ryu \\[0.4em]
+\entry{Postdoctoral Fellow}{Feb.~2026 -- Present}{%
+  PRISM-AI Center (InnoCORE) \& AiM$^4$ Lab,
+  Korea Advanced Institute of Science and Technology (KAIST), S.~Korea \\
+  Advisor: Prof.\ Seunghwa Ryu
+}
 
-& \textbf{Korea Advanced Institute of Science and Technology (KAIST)}, S.~Korea \newline
-Research Assistant in Mechanical Engineering, (Mar.~'22 -- Aug.~'22) \newline
-Advisor: Prof.\ Seunghwa Ryu \\[0.4em]
+\entry{Ph.D.\ in Mechanical Engineering}{Sep.~2022 -- Feb.~2026}{%
+  Korea Advanced Institute of Science and Technology (KAIST), S.~Korea \\
+  Advisor: Prof.\ Seunghwa Ryu
+}
 
-& \textbf{Korea Advanced Institute of Science and Technology (KAIST)}, S.~Korea \newline
-M.S.\ in Mechanical Engineering, (Mar.~'20 -- Feb.~'22) \newline
-Advisor: Prof.\ Seunghwa Ryu \\[0.4em]
+\entry{Research Assistant}{Mar.~2022 -- Aug.~2022}{%
+  Department of Mechanical Engineering, KAIST, S.~Korea \\
+  Advisor: Prof.\ Seunghwa Ryu
+}
 
-& \textbf{Daegu Gyeongbuk Institute of Science and Technology (DGIST)}, S.~Korea \newline
-B.~Eng.\ Convergence Engineering, \textit{Summa Cum Laude} (Mar.~'15 -- Feb.~'19) \\[0.8em]
+\entry{M.S.\ in Mechanical Engineering}{Mar.~2020 -- Feb.~2022}{%
+  Korea Advanced Institute of Science and Technology (KAIST), S.~Korea \\
+  Advisor: Prof.\ Seunghwa Ryu
+}
+
+\entry{B.Eng.\ in Convergence Engineering, \textit{Summa Cum Laude}}{Mar.~2015 -- Feb.~2019}{%
+  Daegu Gyeongbuk Institute of Science and Technology (DGIST), S.~Korea
+}
 
 %% ── Publications ──────────────────────────────────────────────────────────
-Publications &
-\textbf{Peer-reviewed Journals}
-($^+$Equal contribution,\; $^*$Corresponding author) \\[0.4em]
+\section{Publications}
 
-%% 2026 — In Press
-& \textit{In Press (2026)} \\[0.2em]
-& \begin{publist}[start=13]
+\textit{$^+$Equal contribution \quad $^*$Corresponding author}
 
-\item \textbf{Lee,~J.}$^+$, Kim,~J.$^+$, Kee,~S.$^+$, Yu,~J., \& Ryu,~S.$^*$\
-``Federated Learning Framework for Data-Sovereign Quality Prediction
-in Injection Molding.''
-\textbf{International Journal of Precision Engineering and Manufacturing},
-In press.
+\medskip
+\textbf{In Press (2026)}
+
+\begin{publist}[start=13]
+
+\item \textbf{Lee,~J.}$^+$, Kim,~J.$^+$, Kee,~S.$^+$, Yu,~J., \& Ryu,~S.$^*$
+``Federated Learning Framework for Data-Sovereign Quality Prediction in Injection Molding.''
+\textbf{International Journal of Precision Engineering and Manufacturing}, In press.
 \href{https://doi.org/10.1007/s12541-026-01546-0}{10.1007/s12541-026-01546-0}
 
-\item Lee,~S., \textbf{Lee,~J.}, Park,~D., Lee,~S., Lee,~K.$^*$, Kim,~H.$^*$,
-\& Ryu,~S.$^*$\
-``Reducing False Negatives in Gastroesophageal Reflux Disease Diagnosis
-Through Multi-Feature Anomaly Detection of pH-Impedance Signals.''
+\item Lee,~S., \textbf{Lee,~J.}, Park,~D., Lee,~S., Lee,~K.$^*$, Kim,~H.$^*$, \& Ryu,~S.$^*$
+``Reducing False Negatives in Gastroesophageal Reflux Disease Diagnosis Through Multi-Feature Anomaly Detection of pH-Impedance Signals.''
 \textbf{npj Digital Medicine}, In press.
 
-\end{publist} \\[0.4em]
+\end{publist}
 
-%% 2025
-& \textit{2025} \\[0.2em]
-& \begin{publist}[start=11]
+\medskip
+\textbf{2025}
 
-\item \textbf{Lee,~J.}$^+$, Kim,~J.$^+$, Kim,~H.$^+$, Lee,~I., \& Ryu,~S.$^*$\
-``IM-Chat: A Multi-agent LLM-based Framework for Knowledge Transfer in
-Injection Molding Industry.''
-\textbf{Journal of Manufacturing Systems}
-(IF:~14.2, JCR: Top~0.7\%). In press.
+\begin{publist}[start=11]
+
+\item \textbf{Lee,~J.}$^+$, Kim,~J.$^+$, Kim,~H.$^+$, Lee,~I., \& Ryu,~S.$^*$
+``IM-Chat: A Multi-agent LLM-based Framework for Knowledge Transfer in Injection Molding Industry.''
+\textbf{Journal of Manufacturing Systems} (IF:~14.2, JCR Top~0.7\%), In press.
 \href{https://doi.org/10.1016/j.jmsy.2025.11.007}{10.1016/j.jmsy.2025.11.007}
 
-\item Lee,~H.$^+$, Moon,~H.$^+$, \textbf{Lee,~J.}$^+$, \& Ryu,~S.$^*$\
-``Toward Knowledge-Guided AI for Inverse Design in Manufacturing:
-A Perspective on Domain, Physics, and Human-AI Synergy.''
+\item Lee,~H.$^+$, Moon,~H.$^+$, \textbf{Lee,~J.}$^+$, \& Ryu,~S.$^*$
+``Toward Knowledge-Guided AI for Inverse Design in Manufacturing: A Perspective on Domain, Physics, and Human-AI Synergy.''
 \textbf{Advanced Intelligent Discovery}, e202500107.
 \href{https://doi.org/10.1002/aidi.202500107}{10.1002/aidi.202500107}
 
-\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Lee,~S., Jeon,~J., Mun,~C.,
-Yang,~J., Kwon,~H., Lee,~I., Kim,~S., Lim,~E., Jung,~J.,
-Jung,~Y.$^*$, Park,~S.$^*$, Ryu,~S.$^*$, \& Kang,~T.$^*$\
-``Interpretability-Driven Deep Learning for SERS-based Classification
-of Respiratory Viruses.''
-\textbf{Biosensors and Bioelectronics}, 117891
-(IF:~10.5, JCR: Top~3.2\%).
+\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Lee,~S., Jeon,~J., Mun,~C., Yang,~J., Kwon,~H., Lee,~I., Kim,~S., Lim,~E., Jung,~J., Jung,~Y.$^*$, Park,~S.$^*$, Ryu,~S.$^*$, \& Kang,~T.$^*$
+``Interpretability-Driven Deep Learning for SERS-based Classification of Respiratory Viruses.''
+\textbf{Biosensors and Bioelectronics}, 117891 (IF:~10.5, JCR Top~3.2\%).
 \href{https://doi.org/10.1016/j.bios.2025.117891}{10.1016/j.bios.2025.117891}
 
-\item Yoon,~J.$^+$, \textbf{Lee,~J.}$^+$, Ryu,~S.$^*$, \& Park,~J.$^*$\
-``Enhanced Energy Harvesting in Rotary Triboelectric Nanogenerators via
-Gaussian Process Regression-Based Bayesian Optimization.''
-\textbf{Nano Energy}, 135, 110653
-(IF:~17.1, JCR: Top~7.8\%).
+\item Yoon,~J.$^+$, \textbf{Lee,~J.}$^+$, Ryu,~S.$^*$, \& Park,~J.$^*$
+``Enhanced Energy Harvesting in Rotary Triboelectric Nanogenerators via Gaussian Process Regression-Based Bayesian Optimization.''
+\textbf{Nano Energy}, 135, 110653 (IF:~17.1, JCR Top~7.8\%).
 \href{https://doi.org/10.1016/j.nanoen.2025.110653}{10.1016/j.nanoen.2025.110653}
 
-\item Moon,~H., \textbf{Lee,~J.}, Yu,~J., \& Ryu,~S.$^*$\
-``Physics-Informed AI for Material Characterization: A Perspective on
-Data-Efficient Discovery through Physics-Informed Neural Networks.''
+\item Moon,~H., \textbf{Lee,~J.}, Yu,~J., \& Ryu,~S.$^*$
+``Physics-Informed AI for Material Characterization: A Perspective on Data-Efficient Discovery through Physics-Informed Neural Networks.''
 \textbf{International Journal of AI for Materials and Design}, 2(4).
 \href{https://doi.org/10.36922/IJAMD025440043}{10.36922/IJAMD025440043}
 
-\end{publist} \\[0.4em]
+\end{publist}
 
-%% 2024
-& \textit{2024} \\[0.2em]
-& \begin{publist}[start=6]
+\medskip
+\textbf{2024}
 
-\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Moon,~J.$^+$, Lee,~T.$^+$,
-Lim,~E., Jung,~J., Jung,~Y., Lee,~S., Lee,~K.$^*$, Ryu,~S.$^*$,
-\& Kang,~T.$^*$\
-``Multiplex Detection of Foodborne Pathogens using 3D Nanostructure Swab
-and Deep Learning-based Classification Raman Spectra.''
-\textbf{Small}, 20(35), 2308317
-(IF:~13.0, JCR: Top~10.6\%). (front cover)
+\begin{publist}[start=6]
+
+\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Moon,~J.$^+$, Lee,~T.$^+$, Lim,~E., Jung,~J., Jung,~Y., Lee,~S., Lee,~K.$^*$, Ryu,~S.$^*$, \& Kang,~T.$^*$
+``Multiplex Detection of Foodborne Pathogens using 3D Nanostructure Swab and Deep Learning-based Classification Raman Spectra.''
+\textbf{Small}, 20(35), 2308317 (IF:~13.0, JCR Top~10.6\%). (front cover)
 \href{https://doi.org/10.1002/smll.202308317}{10.1002/smll.202308317}
 
-\item \textbf{Lee,~J.}, Park,~K., Park,~K., Kim,~Y., Kim,~J.$^*$,
-\& Ryu,~S.$^*$\
-``Electrode Placement Optimization for Electrical Impedance Tomography
-using Active Learning.''
+\item \textbf{Lee,~J.}, Park,~K., Park,~K., Kim,~Y., Kim,~J.$^*$, \& Ryu,~S.$^*$
+``Electrode Placement Optimization for Electrical Impedance Tomography using Active Learning.''
 \textbf{Advanced Engineering Materials}, 26(11), 2301865.
 \href{https://doi.org/10.1002/adem.202301865}{10.1002/adem.202301865}
 
-\end{publist} \\[0.4em]
+\end{publist}
 
-%% 2020–2023
-& \textit{2020--2023} \\[0.2em]
-& \begin{publist}[start=1]
+\medskip
+\textbf{2023}
 
-\item Lim,~S.~H.$^+$, Sohn,~S.~W.$^+$, Lee,~H., Choi,~D., Jang,~E.,
-Kim,~M., \textbf{Lee,~J.}, \& Park,~S.$^*$\
-``Analysis and evaluation of path planning algorithms for autonomous
-driving of electromagnetically actuated microrobot.''
-\textbf{International Journal of Control, Automation and Systems},
-18, 2943--2954, 2020.
-\href{https://doi.org/10.1007/s12555-019-0637-9}{10.1007/s12555-019-0637-9}
+\begin{publist}[start=4]
 
-\item Park,~K., \textbf{Lee,~J.}, \& Ryu,~S.$^*$\
-``Damage detection of composite materials via IR thermography and
-electrical resistance measurement: A review.''
-\textbf{Structural Engineering and Mechanics}, 80(5), 563--583, 2021.
-\href{https://doi.org/10.12989/sem.2021.80.5.563}{10.12989/sem.2021.80.5.563}
-
-\item Yoon,~J.$^+$, \textbf{Lee,~J.}$^+$, Kim,~G., Ryu,~S.$^*$,
-\& Park,~J.$^*$\
-``Deep neural network-based structural health monitoring technique for
-real-time crack detection and localization using strain gauge sensors.''
-\textbf{Scientific Reports}, 12(1), 20204, 2022.
-\href{https://doi.org/10.1038/s41598-022-24269-4}{10.1038/s41598-022-24269-4}
-
-\item \textbf{Lee,~J.}, Park,~D., Lee,~M., Lee,~H., Park,~K., Lee,~I.,
-\& Ryu,~S.$^*$\
-``Machine learning-based inverse design methods considering data
-characteristics and design space size in materials design and
-manufacturing: a review.''
-\textbf{Materials Horizons}, 10, 5436--5456, 2023
-(IF:~13.3, JCR: Top~9.8\%).
+\item \textbf{Lee,~J.}, Park,~D., Lee,~M., Lee,~H., Park,~K., Lee,~I., \& Ryu,~S.$^*$
+``Machine learning-based inverse design methods considering data characteristics and design space size in materials design and manufacturing: a review.''
+\textbf{Materials Horizons}, 10, 5436--5456 (IF:~13.3, JCR Top~9.8\%).
 \href{https://doi.org/10.1039/D3MH00039G}{10.1039/D3MH00039G}
 
-\end{publist} \\[0.4em]
+\end{publist}
 
-%% Under Review
-& \textbf{Under Review / In Preparation} \\[0.2em]
-& \begin{publist}
+\medskip
+\textbf{2022}
 
-\item Yu,~J.$^+$, Byun,~J.$^+$, Moon,~H., \textbf{Lee,~J.}, \& Ryu,~S.$^*$\
-``Dual-Constrained Diffusion Model for Nonlinear Microstructure Inverse
-Design with Direct Evaluation.'' Submitted.
+\begin{publist}[start=3]
 
-\item Demeke,~W.$^+$, \textbf{Lee,~J.}$^+$, Lee,~I.$^+$, Ryu,~B.$^*$,
-\& Ryu,~S.$^*$\
-``A Comprehensive Review of Thermoelectric Power Generators: Advances in
-Material Discovery, Structural Optimization for Performance Enhancement,
-and Service Life Stability.'' Submitted.
+\item Yoon,~J.$^+$, \textbf{Lee,~J.}$^+$, Kim,~G., Ryu,~S.$^*$, \& Park,~J.$^*$
+``Deep neural network-based structural health monitoring technique for real-time crack detection and localization using strain gauge sensors.''
+\textbf{Scientific Reports}, 12(1), 20204.
+\href{https://doi.org/10.1038/s41598-022-24269-4}{10.1038/s41598-022-24269-4}
 
-\item Cho,~H., Yu,~J., Moon,~H., Yoon,~J., \textbf{Lee,~J.}, Kim,~G.,
-Park,~J., \& Ryu,~S.$^*$\
-``Real-Time Structural Health Monitoring with Bayesian Neural Networks:
-Distinguishing Aleatoric and Epistemic Uncertainty for Digital Twin
-Frameworks.'' \textit{Mechanical Systems and Signal Processing}.
-Under review.
+\end{publist}
 
-\item Lee,~I.$^+$, \textbf{Lee,~J.}$^+$, Park,~J., Lim,~K.$^*$,
-\& Ryu,~S.$^*$\
-``Enhancing LLM-based Conditional Material Generation for Double
-Perovskite through Multi-Agent Feedback and Domain Knowledge.''
-In preparation.
-[\href{https://arxiv.org/abs/2511.22307}{arXiv:2511.22307}]
+\medskip
+\textbf{2021}
 
-\end{publist} \\[0.8em]
+\begin{publist}[start=2]
 
-%% ── Patents ───────────────────────────────────────────────────────────────
-Patents &
+\item Park,~K., \textbf{Lee,~J.}, \& Ryu,~S.$^*$
+``Damage detection of composite materials via IR thermography and electrical resistance measurement: A review.''
+\textbf{Structural Engineering and Mechanics}, 80(5), 563--583.
+\href{https://doi.org/10.12989/sem.2021.80.5.563}{10.12989/sem.2021.80.5.563}
+
+\end{publist}
+
+\medskip
+\textbf{2020}
+
+\begin{publist}[start=1]
+
+\item Lim,~S.~H.$^+$, Sohn,~S.~W.$^+$, Lee,~H., Choi,~D., Jang,~E., Kim,~M., \textbf{Lee,~J.}, \& Park,~S.$^*$
+``Analysis and evaluation of path planning algorithms for autonomous driving of electromagnetically actuated microrobot.''
+\textbf{International Journal of Control, Automation and Systems}, 18, 2943--2954.
+\href{https://doi.org/10.1007/s12555-019-0637-9}{10.1007/s12555-019-0637-9}
+
+\end{publist}
+
+\medskip
+\textbf{Under Review / In Preparation}
+
 \begin{publist}
 
-\item Kim,~J., \textbf{Lee,~J.}, Kim,~H., Lee,~I., Ryu,~S., Nam,~K.,
-\& Yoon,~S.\ (2025).
-``Knowledge Transfer Device and Method using an Agent Based on a
-Large Language Model.''
+\item Yu,~J.$^+$, Byun,~J.$^+$, Moon,~H., \textbf{Lee,~J.}, \& Ryu,~S.$^*$
+``Dual-Constrained Diffusion Model for Nonlinear Microstructure Inverse Design with Direct Evaluation.'' Submitted.
+
+\item Demeke,~W.$^+$, \textbf{Lee,~J.}$^+$, Lee,~I.$^+$, Ryu,~B.$^*$, \& Ryu,~S.$^*$
+``A Comprehensive Review of Thermoelectric Power Generators: Advances in Material Discovery, Structural Optimization for Performance Enhancement, and Service Life Stability.'' Submitted.
+
+\item Cho,~H., Yu,~J., Moon,~H., Yoon,~J., \textbf{Lee,~J.}, Kim,~G., Park,~J., \& Ryu,~S.$^*$
+``Real-Time Structural Health Monitoring with Bayesian Neural Networks: Distinguishing Aleatoric and Epistemic Uncertainty for Digital Twin Frameworks.'' Under review.
+[\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5549564}{SSRN}]
+
+\item Lee,~I.$^+$, \textbf{Lee,~J.}$^+$, Park,~J., Lim,~K.$^*$, \& Ryu,~S.$^*$
+``Enhancing LLM-based Conditional Material Generation for Double Perovskite through Multi-Agent Feedback and Domain Knowledge.'' In preparation.
+[\href{https://arxiv.org/abs/2511.22307}{arXiv:2511.22307}]
+
+\end{publist}
+
+%% ── Patents ───────────────────────────────────────────────────────────────
+\section{Patents}
+
+\begin{publist}
+
+\item Kim,~J., \textbf{Lee,~J.}, Kim,~H., Lee,~I., Ryu,~S., Nam,~K., \& Yoon,~S. (2025).
+``Knowledge Transfer Device and Method using an Agent Based on a Large Language Model.''
 Filed (KR 10-2025-0145843).
 
-\item Ryu,~S., \textbf{Lee,~J.}, \& Park,~K.\ (2023).
-``Method and Apparatus for Optimization of Cathode Material Design
-Multi-objective Bayesian Optimization.''
+\item Ryu,~S., \textbf{Lee,~J.}, \& Park,~K. (2023).
+``Method and Apparatus for Optimization of Cathode Material Design Multi-objective Bayesian Optimization.''
 Filed (KR 10-2023-0172701).
 
-\end{publist} \\[0.8em]
+\end{publist}
 
 %% ── Conferences ───────────────────────────────────────────────────────────
-Conferences &
+\section{Conferences}
+
 \begin{publist}[start=11]
 
-\item Lee,~I., \textbf{Lee,~J.}, \& Ryu,~S.$^*$\ (2025).
-``Multi-Agent Argumentative LLM Framework for Conditional Exploration
-of Double-Perovskite Materials.''
-\textbf{Spring Conference of the Korean Institute of Metals and Materials}
-(Oral Presentation).
+\item Lee,~I., \textbf{Lee,~J.}, \& Ryu,~S.$^*$ (2025).
+``Multi-Agent Argumentative LLM Framework for Conditional Exploration of Double-Perovskite Materials.''
+\textbf{Spring Conference of the Korean Institute of Metals and Materials} (Oral).
 
-\item \textbf{Lee,~J.}$^+$, Kim,~J.$^+$, Kim,~H.$^+$, Lee,~I., Park,~J.,
-\& Ryu,~S.$^*$\ (2025).
-``Enhancing Knowledge Transfer in Injection Molding Through a Multi-Agent
-LLM Framework.''
-\textbf{KSME CAE \& Applied Mechanics Conference}
-(Oral Presentation).
+\item \textbf{Lee,~J.}$^+$, Kim,~J.$^+$, Kim,~H.$^+$, Lee,~I., Park,~J., \& Ryu,~S.$^*$ (2025).
+``Enhancing Knowledge Transfer in Injection Molding Through a Multi-Agent LLM Framework.''
+\textbf{KSME CAE \& Applied Mechanics Conference} (Oral).
 
-\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Moon,~J.$^+$, Lee,~T.$^+$,
-Lim,~E., Jung,~J., Jung,~Y., Lee,~S., Lee,~K.$^*$, Ryu,~S.$^*$,
-\& Kang,~T.$^*$\ (2024).
-``3D Nanostructure Swab and Deep Learning Analysis of Raman Spectra
-for Detection of Multiple Foodborne Pathogens.''
-\textbf{KSME Conference} (Oral Presentation).
+\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Moon,~J.$^+$, Lee,~T.$^+$, Lim,~E., Jung,~J., Jung,~Y., Lee,~S., Lee,~K.$^*$, Ryu,~S.$^*$, \& Kang,~T.$^*$ (2024).
+``3D Nanostructure Swab and Deep Learning Analysis of Raman Spectra for Detection of Multiple Foodborne Pathogens.''
+\textbf{KSME Conference} (Oral).
 
-\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Moon,~J.$^+$, Lee,~T.$^+$,
-Lim,~E., Jung,~J., Jung,~Y., Lee,~S., Lee,~K.$^*$, Ryu,~S.$^*$,
-\& Kang,~T.$^*$\ (2024).
-``Detection of Multiple Foodborne Pathogens Utilizing a
-Three-dimensional Nanostructure Swab and Deep Learning-based Analysis
-of Raman Spectra.''
-\textbf{Nano Korea} (Oral Presentation).
+\item Kang,~H.$^+$, \textbf{Lee,~J.}$^+$, Moon,~J.$^+$, Lee,~T.$^+$, Lim,~E., Jung,~J., Jung,~Y., Lee,~S., Lee,~K.$^*$, Ryu,~S.$^*$, \& Kang,~T.$^*$ (2024).
+``Detection of Multiple Foodborne Pathogens Utilizing a Three-dimensional Nanostructure Swab and Deep Learning-based Analysis of Raman Spectra.''
+\textbf{Nano Korea} (Oral).
 
-\item \textbf{Lee,~J.}$^+$, Park,~D., Lee,~M., Park,~K., Lee,~H.,
-Lee,~I., Lee,~I., \& Ryu,~S.$^*$\ (2024).
-``Review of Machine Learning-based Inverse Design Methods in Materials
-Design and Manufacturing.''
+\item \textbf{Lee,~J.}$^+$, Park,~D., Lee,~M., Park,~K., Lee,~H., Lee,~I., Lee,~I., \& Ryu,~S.$^*$ (2024).
+``Review of Machine Learning-based Inverse Design Methods in Materials Design and Manufacturing.''
 \textbf{KSME CAE \& Applied Mechanics Conference} (Poster).
 
-\item \textbf{Lee,~J.}$^+$, Yoon,~J.$^+$, Kim,~G., Park,~J.$^*$,
-\& Ryu,~S.$^*$\ (2023).
-``Real-time Crack Localization using Strain Gauge Sensors with Deep
-Learning.''
-\textbf{KSME CAE \& Applied Mechanics Conference} (Oral Presentation).
+\item \textbf{Lee,~J.}$^+$, Yoon,~J.$^+$, Kim,~G., Park,~J.$^*$, \& Ryu,~S.$^*$ (2023).
+``Real-time Crack Localization using Strain Gauge Sensors with Deep Learning.''
+\textbf{KSME CAE \& Applied Mechanics Conference} (Oral).
 
-\item \textbf{Lee,~J.}$^+$, Yoon,~J.$^+$, Kim,~G., Park,~J.$^*$,
-\& Ryu,~S.$^*$\ (2023).
-``A Deep Learning Approach for Crack Sensing in Structural Health
-Monitoring using Strain Gauge Sensors.''
-\textbf{COSEIK} (Oral Presentation).
+\item \textbf{Lee,~J.}$^+$, Yoon,~J.$^+$, Kim,~G., Park,~J.$^*$, \& Ryu,~S.$^*$ (2023).
+``A Deep Learning Approach for Crack Sensing in Structural Health Monitoring using Strain Gauge Sensors.''
+\textbf{COSEIK} (Oral).
 
-\item \textbf{Lee,~J.}, \& Ryu,~S.$^*$\ (2022).
-``Deep Learning-based Electrode Placement Optimization for Crack Sensing
-of Carbon-based Composites using Electrode Resistance Tomography.''
+\item \textbf{Lee,~J.}, \& Ryu,~S.$^*$ (2022).
+``Deep Learning-based Electrode Placement Optimization for Crack Sensing of Carbon-based Composites using Electrode Resistance Tomography.''
 \textbf{GRC Additive Manufacturing of Soft Materials} (Poster).
 
-\item \textbf{Lee,~J.}, Lee,~H., \& Ryu,~S.$^*$\ (2022).
-``Electrode Placement Optimization for Electrical Resistance Tomography
-using Transfer Learning.''
-\textbf{KSME CAE \& Applied Mechanics Conference} (Oral Presentation).
+\item \textbf{Lee,~J.}, Lee,~H., \& Ryu,~S.$^*$ (2022).
+``Electrode Placement Optimization for Electrical Resistance Tomography using Transfer Learning.''
+\textbf{KSME CAE \& Applied Mechanics Conference} (Oral).
 
-\item \textbf{Lee,~J.}, \& Ryu,~S.$^*$\ (2021).
-``Data-Driven Electrode Placement Optimization for Crack Sensing of
-Carbon-based Composites using Electrical Resistance Tomography.''
-\textbf{KSME CAE \& Applied Mechanics Conference} (Oral Presentation).
+\item \textbf{Lee,~J.}, \& Ryu,~S.$^*$ (2021).
+``Data-Driven Electrode Placement Optimization for Crack Sensing of Carbon-based Composites using Electrical Resistance Tomography.''
+\textbf{KSME CAE \& Applied Mechanics Conference} (Oral).
 
-\item Choi,~D., Jang,~E., Kim,~M., \textbf{Lee,~J.}, Lim,~S., Sohn,~S.,
-Lee,~H., \& Park,~S.$^*$\ (2018).
-``Analysis of Path Planning Algorithm for Autonomous Control of
-Electromagnetically Actuated Microrobot.''
+\item Choi,~D., Jang,~E., Kim,~M., \textbf{Lee,~J.}, Lim,~S., Sohn,~S., Lee,~H., \& Park,~S.$^*$ (2018).
+``Analysis of Path Planning Algorithm for Autonomous Control of Electromagnetically Actuated Microrobot.''
 \textbf{SMIT2018-IBEC2018 Joint Conference} (Poster).
 
-\end{publist} \\[0.8em]
+\end{publist}
 
 %% ── Honors & Awards ───────────────────────────────────────────────────────
-Honors \& Awards &
-\textbf{Student of the Year},
-Spring Conference of the Korean Institute of Metals and Materials (KIM)
-/ 2025 \\[0.3em]
+\section{Honors \& Awards}
 
-& \textbf{Outstanding Paper Award},
-CAE and Applied Mechanics Division,
-Korean Society of Mechanical Engineering (KSME) / 2025 \\[0.3em]
+\entry{Student of the Year}{2025}{%
+  Spring Conference of the Korean Institute of Metals and Materials (KIM)
+}
 
-& \textbf{DGIST Presidential Fellowship}, DGIST / 2016--2019
-\begin{cvbullet}
-  \item Placed on the Dean's list.
-  \item \$10K expenses for Undergraduate Group Research Program
-  \item \$20K financial support for overseas lab experience
-\end{cvbullet} \\[0.2em]
+\entry{Outstanding Paper Award}{2025}{%
+  CAE and Applied Mechanics Division, Korean Society of Mechanical Engineering (KSME)
+}
 
-& \textbf{Dean's List}, DGIST / 2015
-\begin{cvbullet}
-  \item Included in the top 5 excellent students ranking in each semester
-  \item \$2.5K financial support for undergraduate study
-\end{cvbullet} \\[0.8em]
+\entry{DGIST Presidential Fellowship}{2016--2019}{%
+  DGIST
+  \begin{cvbullet}
+    \item Placed on the Dean's list.
+    \item \$10K expenses for Undergraduate Group Research Program
+    \item \$20K financial support for overseas lab experience
+  \end{cvbullet}
+}
+
+\entry{Dean's List}{2015}{%
+  DGIST
+  \begin{cvbullet}
+    \item Included in the top 5 excellent students ranking in each semester
+    \item \$2.5K financial support for undergraduate study
+  \end{cvbullet}
+}
 
 %% ── Projects ──────────────────────────────────────────────────────────────
-Projects &
-\textbf{InnoCORE Project},
-Ministry of Science and ICT (MSIT), Korea / 2025--Present
-\begin{cvbullet}
-  \item National flagship program ($\sim$\$25M USD over 4.5 years) to
-    advance AI-driven manufacturing and foster postdoctoral researchers
-    across Korea's four Institutes of Science and Technology
-    (KAIST, GIST, DGIST, UNIST).
-  \item Led the proposal development and conceptual design of an LLM-based
-    autonomous manufacturing framework integrating materials, structure,
-    and processing, under the leadership of my advisor's lab, which serves
-    as the lead institution of the project.
-  \item Developing LLM-driven methods for materials design, structural
-    optimization, and process parameter tuning.
-\end{cvbullet} \\[0.3em]
+\section{Projects}
 
-& \textbf{National Agenda Basic Research Program},
-MSIT, Korea / 2025--Present
-\begin{cvbullet}
-  \item Three-year national research project ($\sim$\$150K USD per year)
-    focused on developing domain-specialized LLMs to enhance productivity
-    in advanced manufacturing.
-  \item Contributing to the development of core LLM frameworks and
-    application technologies enabling intelligent, domain-aware automation
-    in smart manufacturing workflows.
-\end{cvbullet} \\[0.8em]
+\entry{InnoCORE Project}{2025--Present}{%
+  Ministry of Science and ICT (MSIT), Korea
+  \begin{cvbullet}
+    \item National flagship program ($\sim$\$25M USD over 4.5 years) to advance AI-driven manufacturing and foster postdoctoral researchers across Korea's four Institutes of Science and Technology (KAIST, GIST, DGIST, UNIST).
+    \item Led the proposal development and conceptual design of an LLM-based autonomous manufacturing framework integrating materials, structure, and processing.
+    \item Developing LLM-driven methods for materials design, structural optimization, and process parameter tuning.
+  \end{cvbullet}
+}
+
+\entry{National Agenda Basic Research Program}{2025--Present}{%
+  Ministry of Science and ICT (MSIT), Korea
+  \begin{cvbullet}
+    \item Three-year national research project ($\sim$\$150K USD per year) focused on developing domain-specialized LLMs to enhance productivity in advanced manufacturing.
+    \item Contributing to core LLM frameworks and application technologies enabling intelligent, domain-aware automation in smart manufacturing workflows.
+  \end{cvbullet}
+}
 
 %% ── Teaching ──────────────────────────────────────────────────────────────
-Teaching Experience \& Leadership &
-\textbf{AiM$^4$ Lab Student Representative}, KAIST / 2024
-\begin{cvbullet}
-  \item Coordinated ongoing research activities, organized internal
-    seminars, managed lab resources
-\end{cvbullet} \\[0.3em]
+\section{Teaching Experience \& Leadership}
 
-& \textbf{Teaching Assistant}, KAIST / 2022--2025
-\begin{cvbullet}
-  \item ME567: Introduction to statistical thermodynamics (2022)
-  \item ME231: Solid Mechanics (2023, 2025)
-  \item ME639: Introduction to Elasticity and Micromechanics (2023)
-  \item ME211: Thermodynamics (2024)
-  \item ME491B: Introduction to statistical data analysis (2024)
-  \item ME221: Fluid Mechanics (2024, 2025)
-\end{cvbullet} \\[0.3em]
+\entry{AiM$^4$ Lab Student Representative, KAIST}{2024}{%
+  \begin{cvbullet}
+    \item Coordinated ongoing research activities, organized internal seminars, managed lab resources
+  \end{cvbullet}
+}
 
-& \textbf{Teaching Assistant}, DGIST / 2019
-\begin{cvbullet}
-  \item SE201b: Linear Algebra (2019)
-\end{cvbullet} \\[0.8em]
+\entry{Teaching Assistant, KAIST}{2022--2025}{%
+  \begin{cvbullet}
+    \item ME567: Introduction to statistical thermodynamics (2022)
+    \item ME231: Solid Mechanics (2023, 2025)
+    \item ME639: Introduction to Elasticity and Micromechanics (2023)
+    \item ME211: Thermodynamics (2024)
+    \item ME491B: Introduction to statistical data analysis (2024)
+    \item ME221: Fluid Mechanics (2024, 2025)
+  \end{cvbullet}
+}
+
+\entry{Teaching Assistant, DGIST}{2019}{%
+  \begin{cvbullet}
+    \item SE201b: Linear Algebra (2019)
+  \end{cvbullet}
+}
 
 %% ── Skills ────────────────────────────────────────────────────────────────
-Skills &
+\section{Skills}
+
 \textbf{Simulation / Coding:}
-COMSOL Multiphysics, ABAQUS, Fe-safe, HyperMesh, ADINA, EIDORS,
-MATLAB, Python \\[0.3em]
+COMSOL Multiphysics, ABAQUS, Fe-safe, HyperMesh, ADINA, EIDORS, MATLAB, Python
 
-& \textbf{Data-Driven Design:}
-Generative modeling, surrogate modeling \& optimization algorithm,
-Bayesian optimization \\[0.3em]
+\medskip
+\textbf{Data-Driven Design:}
+Generative modeling, surrogate modeling \& optimization algorithm, Bayesian optimization
 
-& \textbf{Large Language Model:}
-Multi-agent orchestration, RAG (retrieval-augmented generation),
-tool-calling \\[0.3em]
+\medskip
+\textbf{Large Language Model:}
+Multi-agent orchestration, RAG (retrieval-augmented generation), tool-calling
 
-& \textbf{Languages:} Korean (native), English (advanced) \\[0.8em]
+\medskip
+\textbf{Languages:} Korean (native), English (advanced)
 
 %% ── References ────────────────────────────────────────────────────────────
-References &
-\textbf{Prof.\ Seunghwa Ryu} \newline
-Department of Mechanical Engineering, KAIST \newline
-\href{mailto:ryush@kaist.ac.kr}{ryush@kaist.ac.kr} \\[0.4em]
+\section{References}
 
-& \textbf{Prof.\ Ikjin Lee} \newline
-Department of Mechanical Engineering, KAIST \newline
-\href{mailto:ikjin.lee@kaist.ac.kr}{ikjin.lee@kaist.ac.kr} \\[0.4em]
+\textbf{Prof.\ Seunghwa Ryu} \\
+Department of Mechanical Engineering, KAIST \\
+\href{mailto:ryush@kaist.ac.kr}{ryush@kaist.ac.kr}
 
-& \textbf{Prof.\ Jinhyoung Park} \newline
-School of Mechatronics Engineering,
-Korea University of Technology and Education \newline
-\href{mailto:jhpark98@koreatech.ac.kr}{jhpark98@koreatech.ac.kr} \\
+\bigskip
+\textbf{Prof.\ Ikjin Lee} \\
+Department of Mechanical Engineering, KAIST \\
+\href{mailto:ikjin.lee@kaist.ac.kr}{ikjin.lee@kaist.ac.kr}
 
-\end{cvtable}
+\bigskip
+\textbf{Prof.\ Jinhyoung Park} \\
+School of Mechatronics Engineering, Korea University of Technology and Education \\
+\href{mailto:jhpark98@koreatech.ac.kr}{jhpark98@koreatech.ac.kr}
 
 \end{document}
