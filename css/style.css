@@ -396,13 +396,23 @@ img { max-width: 100%; display: block; }
 }
 
 /* Under review / compact pub items */
-.under-review .pub-item.compact {
-  grid-template-columns: 1fr;
-  padding-bottom: 16px;
+.pub-list.under-review {
+  gap: 0;
+}
+
+.pub-item.compact {
+  display: block;
+  padding: 16px 0;
   border-bottom: 1px solid var(--color-border);
 }
-.under-review .pub-item.compact:last-child {
+
+.pub-item.compact:first-child {
+  padding-top: 0;
+}
+
+.pub-item.compact:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 /* =============================================
