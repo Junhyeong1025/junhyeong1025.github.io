@@ -30,7 +30,8 @@ jobs:
             texlive-base \
             texlive-latex-recommended \
             texlive-fonts-recommended \
-            texlive-latex-extra
+            texlive-latex-extra \
+            lmodern
 
       - name: Compile LaTeX CV
         run: |
