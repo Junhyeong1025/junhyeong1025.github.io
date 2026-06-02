@@ -32,11 +32,17 @@ jobs:
 
       - name: Use compiled PDF
         run: |
+          echo "=== cv/ directory contents ==="
+          ls -la cv/
           if [ -f cv/junhyeong_lee_cv.pdf ]; then
             cp cv/junhyeong_lee_cv.pdf CV_JunhyeongLee_long_version.pdf
-            echo "✅ LaTeX CV compiled successfully"
+            echo "✅ LaTeX CV compiled successfully ($(du -h cv/junhyeong_lee_cv.pdf | cut -f1))"
           else
             echo "⚠️  LaTeX compilation failed — using existing PDF"
+            if [ -f cv/junhyeong_lee_cv.log ]; then
+              echo "=== LaTeX log (last 50 lines) ==="
+              tail -50 cv/junhyeong_lee_cv.log
+            fi
           fi
 
       - name: Setup Pages
