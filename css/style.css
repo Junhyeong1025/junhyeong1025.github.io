@@ -158,8 +158,14 @@ img { max-width: 100%; display: block; }
   font-size: 0.975rem;
 }
 
+.contact-email {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
 .contact-links {
-  margin-top: 20px;
+  margin-top: 8px;
   display: flex;
   align-items: center;
   gap: 8px;
