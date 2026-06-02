@@ -66,8 +66,9 @@
 
 %% ── Entry helper: bold title, right-aligned date, detail below ───────────
 \newcommand{\entry}[3]{%
-  \textbf{#1}\hfill #2 \\
-  #3 \vspace{4pt}%
+  \noindent\textbf{#1}\hfill\mbox{#2}\par%
+  \ifx&#3&\else\noindent #3\par\fi%
+  \vspace{4pt}%
 }
 
 %% ══════════════════════════════════════════════════════════════════════════
@@ -279,7 +280,7 @@ Filed (KR 10-2023-0172701).
 %% ── Conferences ───────────────────────────────────────────────────────────
 \begin{cvsec}{Conferences}
 
-\begin{publist}[start=1]
+\begin{publist}
 
 \item Choi,~D., Jang,~E., Kim,~M., \textbf{Lee,~J.}, Lim,~S., Sohn,~S., Lee,~H., \& Park,~S.$^*$ (2018).
 ``Analysis of Path Planning Algorithm for Autonomous Control of Electromagnetically Actuated Microrobot.''
@@ -389,9 +390,11 @@ Filed (KR 10-2023-0172701).
 
 \entry{Teaching Assistant, KAIST}{2022--2025}{%
   \begin{cvbullet}
-    \item ME567: Introduction to statistical thermodynamics (2022)
-    \item ME231: Solid Mechanics (2023, 2025) \quad ME639: Elasticity \& Micromechanics (2023)
-    \item ME211: Thermodynamics (2024) \quad ME491B: Statistical Data Analysis (2024)
+    \item ME567: Introduction to Statistical Thermodynamics (2022)
+    \item ME231: Solid Mechanics (2023, 2025)
+    \item ME639: Elasticity \& Micromechanics (2023)
+    \item ME211: Thermodynamics (2024)
+    \item ME491B: Statistical Data Analysis (2024)
     \item ME221: Fluid Mechanics (2024, 2025)
   \end{cvbullet}
 }
