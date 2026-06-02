@@ -23,27 +23,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Compile LaTeX CV
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: cv/junhyeong_lee_cv.tex
-          work_in_root_file_dir: true
-        continue-on-error: true
-
-      - name: Use compiled PDF
+      - name: Install TeX Live
         run: |
-          echo "=== cv/ directory contents ==="
-          ls -la cv/
-          if [ -f cv/junhyeong_lee_cv.pdf ]; then
-            cp cv/junhyeong_lee_cv.pdf CV_JunhyeongLee_long_version.pdf
-            echo "✅ LaTeX CV compiled successfully ($(du -h cv/junhyeong_lee_cv.pdf | cut -f1))"
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive-base \
+            texlive-latex-recommended \
+            texlive-fonts-recommended \
+            texlive-latex-extra
+
+      - name: Compile LaTeX CV
+        run: |
+          cd cv
+          pdflatex -interaction=nonstopmode junhyeong_lee_cv.tex 2>&1 | tail -30
+          if [ -f junhyeong_lee_cv.pdf ]; then
+            echo "✅ PDF generated ($(du -h junhyeong_lee_cv.pdf | cut -f1))"
+            cp junhyeong_lee_cv.pdf ../CV_JunhyeongLee_long_version.pdf
           else
-            echo "⚠️  LaTeX compilation failed — using existing PDF"
-            if [ -f cv/junhyeong_lee_cv.log ]; then
-              echo "=== LaTeX log (last 50 lines) ==="
-              tail -50 cv/junhyeong_lee_cv.log
-            fi
+            echo "⚠️  PDF not generated — using existing PDF"
           fi
+        continue-on-error: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
