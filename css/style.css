@@ -569,6 +569,13 @@ img { max-width: 100%; display: block; }
 }
 
 /* =============================================
+   Sub-page first section (clears fixed nav)
+   ============================================= */
+.section-first {
+  padding-top: calc(var(--nav-height) + 48px);
+}
+
+/* =============================================
    Footer
    ============================================= */
 footer {
