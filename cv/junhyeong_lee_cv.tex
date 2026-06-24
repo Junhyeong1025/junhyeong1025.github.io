@@ -46,13 +46,12 @@
 }
 
 %% -- List styles -------------------------------------------------------
-%% etaremune: reversed numbering for publications (newest = highest number)
-\setlist[etaremune]{
-  leftmargin = 2em,
-  itemsep    = 5pt,
-  parsep     = 0pt,
-  topsep     = 0pt,
-  partopsep  = 0pt
+%% pubrev: reversed numbering for publications (newest = highest number)
+%% Usage: \begin{pubrev}{13} ... \end{pubrev}
+\newenvironment{pubrev}[1]{%
+  \begin{etaremune}[leftmargin=2em, itemsep=5pt, parsep=0pt, topsep=0pt, partopsep=0pt, start=#1]%
+}{%
+  \end{etaremune}%
 }
 
 %% publist: ascending numbering for patents, conferences, under review
@@ -146,7 +145,7 @@ Large Language Models
 
 \vspace{3pt}
 \textbf{2026}
-\begin{etaremune}[start=13]
+\begin{pubrev}{13}
 
 \item Lee,~S., \textbf{Lee,~J.}, Park,~D., Lee,~S., Lee,~K.$^*$, Kim,~H.$^*$, \& Ryu,~S.$^*$
 ``Reducing False Negatives in Gastroesophageal Reflux Disease Diagnosis Through Multi-Feature Anomaly Detection of pH-Impedance Signals.''
@@ -157,11 +156,11 @@ Large Language Models
 \textbf{International Journal of Precision Engineering and Manufacturing}, In press.
 \href{https://doi.org/10.1007/s12541-026-01546-0}{10.1007/s12541-026-01546-0}
 
-\end{etaremune}
+\end{pubrev}
 
 \vspace{3pt}
 \textbf{2025}
-\begin{etaremune}[start=11]
+\begin{pubrev}{11}
 
 \item \textbf{Lee,~J.}$^+$, Kim,~J.$^+$, Kim,~H.$^+$, Lee,~I., \& Ryu,~S.$^*$
 ``IM-Chat: A Multi-agent LLM-based Framework for Knowledge Transfer in Injection Molding Industry.''
@@ -188,11 +187,11 @@ Large Language Models
 \textbf{International Journal of AI for Materials and Design}, 2(4).
 \href{https://doi.org/10.36922/IJAMD025440043}{10.36922/IJAMD025440043}
 
-\end{etaremune}
+\end{pubrev}
 
 \vspace{3pt}
 \textbf{2024}
-\begin{etaremune}[start=6]
+\begin{pubrev}{6}
 
 \item \textbf{Lee,~J.}, Park,~K., Park,~K., Kim,~Y., Kim,~J.$^*$, \& Ryu,~S.$^*$
 ``Electrode Placement Optimization for Electrical Impedance Tomography using Active Learning.''
@@ -204,51 +203,51 @@ Large Language Models
 \textbf{Small}, 20(35), 2308317 (IF:~13.0, JCR Top~10.6\%). (front cover)
 \href{https://doi.org/10.1002/smll.202308317}{10.1002/smll.202308317}
 
-\end{etaremune}
+\end{pubrev}
 
 \vspace{3pt}
 \textbf{2023}
-\begin{etaremune}[start=4]
+\begin{pubrev}{4}
 
 \item \textbf{Lee,~J.}, Park,~D., Lee,~M., Lee,~H., Park,~K., Lee,~I., \& Ryu,~S.$^*$
 ``Machine learning-based inverse design methods considering data characteristics and design space size in materials design and manufacturing: a review.''
 \textbf{Materials Horizons}, 10, 5436--5456 (IF:~13.3, JCR Top~9.8\%).
 \href{https://doi.org/10.1039/D3MH00039G}{10.1039/D3MH00039G}
 
-\end{etaremune}
+\end{pubrev}
 
 \vspace{3pt}
 \textbf{2022}
-\begin{etaremune}[start=3]
+\begin{pubrev}{3}
 
 \item Yoon,~J.$^+$, \textbf{Lee,~J.}$^+$, Kim,~G., Ryu,~S.$^*$, \& Park,~J.$^*$
 ``Deep neural network-based structural health monitoring technique for real-time crack detection and localization using strain gauge sensors.''
 \textbf{Scientific Reports}, 12(1), 20204.
 \href{https://doi.org/10.1038/s41598-022-24269-4}{10.1038/s41598-022-24269-4}
 
-\end{etaremune}
+\end{pubrev}
 
 \vspace{3pt}
 \textbf{2021}
-\begin{etaremune}[start=2]
+\begin{pubrev}{2}
 
 \item Park,~K., \textbf{Lee,~J.}, \& Ryu,~S.$^*$
 ``Damage detection of composite materials via IR thermography and electrical resistance measurement: A review.''
 \textbf{Structural Engineering and Mechanics}, 80(5), 563--583.
 \href{https://doi.org/10.12989/sem.2021.80.5.563}{10.12989/sem.2021.80.5.563}
 
-\end{etaremune}
+\end{pubrev}
 
 \vspace{3pt}
 \textbf{2020}
-\begin{etaremune}[start=1]
+\begin{pubrev}{1}
 
 \item Lim,~S.~H.$^+$, Sohn,~S.~W.$^+$, Lee,~H., Choi,~D., Jang,~E., Kim,~M., \textbf{Lee,~J.}, \& Park,~S.$^*$
 ``Analysis and evaluation of path planning algorithms for autonomous driving of electromagnetically actuated microrobot.''
 \textbf{International Journal of Control, Automation and Systems}, 18, 2943--2954.
 \href{https://doi.org/10.1007/s12555-019-0637-9}{10.1007/s12555-019-0637-9}
 
-\end{etaremune}
+\end{pubrev}
 
 \vspace{3pt}
 \textbf{Under Review / In Preparation}
