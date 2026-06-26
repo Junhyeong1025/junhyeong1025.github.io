@@ -593,6 +593,31 @@ footer p {
    Responsive
    ============================================= */
 @media (max-width: 640px) {
+  .nav-inner {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .nav-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-name {
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    flex-shrink: 0;
+    gap: 16px;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 24px;
