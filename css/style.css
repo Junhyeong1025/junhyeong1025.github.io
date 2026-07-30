@@ -243,6 +243,15 @@ img { max-width: 100%; display: block; }
   color: var(--color-text);
 }
 
+.pub-number {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
 .pub-authors {
   font-size: 0.875rem;
   color: var(--color-text-muted);
