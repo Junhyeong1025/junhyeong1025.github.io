@@ -214,9 +214,13 @@ img { max-width: 100%; display: block; }
 
 .pub-item {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 1fr 120px;
   gap: 24px;
   align-items: start;
+}
+
+.pub-thumb {
+  order: 2;
 }
 
 .pub-thumb img {
