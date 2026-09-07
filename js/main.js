@@ -7,3 +7,23 @@
     }
   });
 })();
+
+// Expand a collapsed publication group when it is linked to directly
+(function () {
+  function openFromHash() {
+    if (!window.location.hash) return;
+    let target;
+    try {
+      target = document.querySelector(window.location.hash);
+    } catch (e) {
+      return;
+    }
+    const details = target && target.querySelector('details');
+    if (details && !details.open) {
+      details.open = true;
+      target.scrollIntoView();
+    }
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+})();

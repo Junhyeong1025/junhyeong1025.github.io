@@ -470,7 +470,7 @@ img { max-width: 100%; display: block; }
    ============================================= */
 /* Submitted / Journal Articles / Conferences / Patents */
 .pub-group {
-  padding: 48px 0;
+  padding: 36px 0;
 }
 
 .pub-group-heading {
@@ -479,6 +479,54 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   color: var(--color-text);
   margin-bottom: 8px;
+}
+
+/* collapsible groups */
+.pub-details > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.pub-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* chevron: points right when closed, down when open */
+.pub-details > summary::before {
+  content: '';
+  flex: none;
+  width: 0;
+  height: 0;
+  border-left: 6px solid var(--color-text-muted);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transition: transform 0.15s ease;
+}
+
+.pub-details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.pub-details > summary:hover {
+  color: var(--color-accent);
+}
+
+.pub-details > summary:hover::before {
+  border-left-color: var(--color-accent);
+}
+
+.pub-count {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1px 8px;
 }
 
 .pub-year-heading {
