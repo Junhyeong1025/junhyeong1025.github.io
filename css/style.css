@@ -468,6 +468,19 @@ img { max-width: 100%; display: block; }
 /* =============================================
    Publication year headings
    ============================================= */
+/* Submitted / Journal Articles / Conferences / Patents */
+.pub-group {
+  padding: 48px 0;
+}
+
+.pub-group-heading {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
 .pub-year-heading {
   font-size: 0.85rem;
   font-weight: 600;
@@ -475,6 +488,11 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.08em;
   color: var(--color-text-muted);
   margin: 36px 0 16px;
+}
+
+/* first year sits right under its group heading */
+.pub-group-heading + .pub-year-heading {
+  margin-top: 20px;
 }
 
 .badge {
