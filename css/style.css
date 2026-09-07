@@ -249,9 +249,15 @@ img { max-width: 100%; display: block; }
 
 .pub-item {
   display: grid;
-  grid-template-columns: 1fr 120px;
-  gap: 24px;
+  grid-template-columns: 34px 1fr 120px;
+  column-gap: 16px;
   align-items: start;
+}
+
+.pub-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .pub-thumb {
@@ -284,11 +290,14 @@ img { max-width: 100%; display: block; }
 
 .pub-number {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--color-text-muted);
-  margin-right: 6px;
-  vertical-align: middle;
+}
+
+/* left-hand number column (journals / conferences) */
+.pub-item > .pub-number {
+  padding-top: 4px;
 }
 
 .pub-authors {
@@ -297,17 +306,35 @@ img { max-width: 100%; display: block; }
   margin-bottom: 4px;
 }
 
+/* venue badge — hoisted above the title via flex order */
 .pub-venue {
-  font-size: 0.875rem;
+  order: -1;
+  align-self: flex-start;
+  max-width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-radius: 4px;
+  padding: 3px 8px;
+  margin-bottom: 7px;
+}
+
+.pub-meta {
+  font-size: 0.825rem;
   color: var(--color-text-muted);
-  font-style: italic;
-  margin-bottom: 8px;
+  margin-top: 5px;
 }
 
 .pub-links {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .pub-links a {
@@ -361,50 +388,6 @@ img { max-width: 100%; display: block; }
   color: var(--color-accent);
   border-color: var(--color-accent);
   text-decoration: none;
-}
-
-/* =============================================
-   Conferences
-   ============================================= */
-.conf-list {
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-}
-
-.conf-item {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--color-border);
-  align-items: start;
-}
-
-.conf-item:last-child { border-bottom: none; }
-
-.conf-year {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  padding-top: 2px;
-}
-
-.conf-title {
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 3px;
-}
-
-.conf-authors {
-  font-size: 0.825rem;
-  color: var(--color-text-muted);
-  margin-bottom: 3px;
-}
-
-.conf-venue {
-  font-size: 0.825rem;
-  color: var(--color-text-muted);
 }
 
 /* =============================================
@@ -675,7 +658,13 @@ footer p {
   }
 
   .pub-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: 28px 1fr;
+    column-gap: 12px;
+  }
+
+  .pub-thumb {
+    grid-column: 1 / -1;
+    margin-top: 10px;
   }
 
   .pub-thumb img,
