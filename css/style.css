@@ -210,7 +210,7 @@ img { max-width: 100%; display: block; }
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px;
   margin-top: 18px;
 }
 
@@ -231,13 +231,13 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   line-height: 1.45;
   color: var(--color-text);
+  margin-bottom: 3px;
 }
 
-.research-scope {
-  font-family: var(--font-sans);
+.research-desc {
   font-size: 0.9rem;
-  font-weight: 400;
   color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 /* =============================================
