@@ -257,8 +257,6 @@ img { max-width: 100%; display: block; }
 }
 
 .pub-info {
-  display: flex;
-  flex-direction: column;
   min-width: 0;
 }
 
@@ -288,39 +286,17 @@ img { max-width: 100%; display: block; }
   margin-bottom: 4px;
 }
 
-/* venue badge + its detail, on one row hoisted above the title */
-.pub-head {
-  order: -1;
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 3px 10px;
-  margin-bottom: 7px;
-}
-
 .pub-venue {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #1d4ed8;
-  background: #eff6ff;
-  border-radius: 4px;
-  padding: 3px 8px;
-}
-
-.pub-meta {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
 }
 
 .pub-links {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 8px;
 }
 
 .pub-links a {
