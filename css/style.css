@@ -308,11 +308,17 @@ img { max-width: 100%; display: block; }
   margin-bottom: 4px;
 }
 
-/* venue badge — hoisted above the title via flex order */
-.pub-venue {
+/* venue badge + its detail, on one row hoisted above the title */
+.pub-head {
   order: -1;
-  align-self: flex-start;
-  max-width: 100%;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 3px 10px;
+  margin-bottom: 7px;
+}
+
+.pub-venue {
   font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
@@ -323,13 +329,11 @@ img { max-width: 100%; display: block; }
   background: #eff6ff;
   border-radius: 4px;
   padding: 3px 8px;
-  margin-bottom: 7px;
 }
 
 .pub-meta {
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
-  margin-top: 5px;
 }
 
 .pub-links {
