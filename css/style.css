@@ -210,32 +210,34 @@ img { max-width: 100%; display: block; }
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .research-list li {
   display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 14px;
-  align-items: start;
+  grid-template-columns: 26px 1fr;
+  gap: 10px;
+  align-items: baseline;
 }
 
 .research-icon {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  font-size: 1.15rem;
 }
 
 .research-title {
-  font-size: 0.95rem;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 2px;
+  line-height: 1.45;
+  color: var(--color-text);
 }
 
-.research-desc {
+.research-scope {
+  font-family: var(--font-sans);
   font-size: 0.9rem;
+  font-weight: 400;
   color: var(--color-text-muted);
-  line-height: 1.6;
 }
 
 /* =============================================
