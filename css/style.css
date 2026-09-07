@@ -206,6 +206,12 @@ img { max-width: 100%; display: block; }
 /* =============================================
    Research themes
    ============================================= */
+.research-intro {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-top: 14px;
+}
+
 .research-list {
   list-style: none;
   display: flex;
