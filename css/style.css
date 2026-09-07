@@ -240,6 +240,12 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
 }
 
+.research-ref {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  margin-top: 3px;
+}
+
 /* =============================================
    Publications
    ============================================= */
