@@ -7,9 +7,3 @@
     }
   });
 })();
-
-// Open pub thumbnails in new tab on click
-document.querySelectorAll('.pub-thumb img').forEach(img => {
-  img.style.cursor = 'zoom-in';
-  img.addEventListener('click', () => window.open(img.src, '_blank'));
-});
